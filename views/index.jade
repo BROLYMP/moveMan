@@ -1,0 +1,65 @@
+extends layout
+
+block content
+
+    #cssmenu
+      ul
+        li.active
+          a(href='#')
+            span Team
+        li
+          a(href='#')
+            span Update
+        li.last
+          a(href='#')
+            span About
+    #wrapper
+      #left_menu
+        each player in playerlist
+          - var role= player.role
+          .accordionButton= role
+          .accordionContent
+            .position_img
+              img(src=player.img)
+            .player_info
+              span= player.name
+              br
+              span= 'KDA: '
+              span(id='#{role}_kda').roundUp= (player.kills+player.assists)/player.deaths
+              br
+              span= 'ATP: '
+              span(id='#{role}_atp').roundUp= ((player.kills * 3.5 - player.deaths * 1.5 + player.assists * 2 + player.cs * 0.01 + (player.gold/player.mins) * 0.006))/player.games
+            .player_grade
+              span(id='#{role}_grade')= ''
+            .player_stats
+              span= 'AVG Gold: '
+              span(id='#{role}_gold').roundUp= player.gold/player.games
+              br
+              span= 'AVG GPM: '
+              span(id='#{role}_gpm').roundUp= player.gold/player.mins
+              br
+              span= 'AVG Kills: '
+              span(id='#{role}_kills').roundUp= player.kills/player.games
+              br
+              span= 'AVG Deaths: '
+              span(id='#{role}_deaths').roundUp= player.deaths/player.games
+              br
+              span= 'AVG Assists: '
+              span(id='#{role}_assists').roundUp= player.assists/player.games
+              br
+              span= 'AVG CS: '
+              span(id='#{role}_cs').roundUp= player.cs/player.games
+      #main_content
+        h1 Team_INF0
+        table
+          thead
+            th Name
+            th Kills
+          tbody
+            - var name= ' '
+            - var kills= 0
+              each player in playerlist
+                - name = name + player.name
+                - kills = kills + player.kills
+              th= name
+              th= kills 
