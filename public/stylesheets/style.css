@@ -143,5 +143,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
     font-size: 150px;
     margin-left: 20px;
     font-family: 'Lobster', cursive;
-    color: red;
+}
+.player_stats{
+  display: inline-block;
+}
+.stats_grade{
+  margin-left: 40px;
+  display: inline-block;
 }

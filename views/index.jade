@@ -49,17 +49,29 @@ block content
               br
               span= 'AVG CS: '
               span(id='#{role}_cs').roundUp= player.cs/player.games
+            .stats_grade
+              span(id='#{role}_gold_g')
+              br
+              span(id='#{role}_gpm_g')
+              br
+              span(id='#{role}_kills_g')
+              br
+              span(id='#{role}_deaths_g')
+              br
+              span(id='#{role}_assists_g')
+              br
+              span(id='#{role}_cs_g')
       #main_content
-        h1 Team_INF0
+        h1 Team_INF0(TODO)
         table
           thead
-            th Name
+            th Names
             th Kills
           tbody
             - var name= ' '
             - var kills= 0
               each player in playerlist
-                - name = name + player.name
+                - name = name + ' ' + player.name
                 - kills = kills + player.kills
               th= name
               th= kills 
