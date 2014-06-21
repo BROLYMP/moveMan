@@ -26,6 +26,18 @@ function gradeAll(){
         gradeEm(txt);
     }
 }
+function parseDiff(x, y){
+    if (x<0) {document.getElementById(y).style.color='red';}
+    else if (x>0) {document.getElementById(y).style.color='#19D419';}
+    else if (x==0) {document.getElementById(y).style.color='gray';}
+    x = x.toFixed(1);
+    x = commafy(x);
+    document.getElementById(y).innerHTML = x;
+}
+function parseGrade(a, b, c){
+document.getElementById(a).innerHTML = b;
+document.getElementById(a).style.color=c;
+}
 function gradeEm(value){
 var kdaId = value + '_kda'; //айди элемента кда
 var goldId = value + '_gold'; //айди голды
@@ -55,59 +67,126 @@ var cs = parseFloat(document.getElementById(csId).innerHTML);
 //анализируем кда
 
 if (kda>=8&&value!='SUP'&&value!='JUN'){
-document.getElementById(gradeId).innerHTML = 'A+';
-document.getElementById(gradeId).style.color='#660066';
+parseGrade(gradeId, 'A+', '#660066');
 }
 else if(kda>=6&&kda<8&&value!='SUP'&&value!='JUN'){
-document.getElementById(gradeId).innerHTML = 'A';
-document.getElementById(gradeId).style.color='green';
+parseGrade(gradeId, 'A', 'green');
 }
 else if(kda>=4.5&&kda<6&&value!='SUP'&&value!='JUN'){
-document.getElementById(gradeId).innerHTML = 'A-';
-document.getElementById(gradeId).style.color='gold';
+parseGrade(gradeId, 'A-', 'gold');
 }
 else if(kda>=3&&kda<4.5&&value!='SUP'&&value!='JUN'){
-document.getElementById(gradeId).innerHTML = 'B';
-document.getElementById(gradeId).style.color='grey'; 
+parseGrade(gradeId, 'B', 'grey');
 }
 else if(kda<3&&value!='SUP'&&value!='JUN'){
-document.getElementById(gradeId).innerHTML = 'C';
-document.getElementById(gradeId).style.color='red'; 
+parseGrade(gradeId, 'C', 'red');
 }
 else if(kda>=6){
-document.getElementById(gradeId).innerHTML = 'A+';
-document.getElementById(gradeId).style.color='#660066';   
+parseGrade(gradeId, 'A+', '#660066');   
 }
 else if(kda>=4.5&&kda<6){
-document.getElementById(gradeId).innerHTML = 'A';
-document.getElementById(gradeId).style.color='green';
+parseGrade(gradeId, 'A', 'green');
 }
 else if(kda>=3&&kda<4.5){
-document.getElementById(gradeId).innerHTML = 'A-';
-document.getElementById(gradeId).style.color='gold';
+parseGrade(gradeId, 'A-', 'gold');
 }
 else if(kda>=2.5&&kda<3){
-document.getElementById(gradeId).innerHTML = 'B';   
-document.getElementById(gradeId).style.color='grey'; 
+parseGrade(gradeId, 'B', 'grey'); 
 }
 else if(kda<2.5){
-document.getElementById(gradeId).innerHTML = 'C';
-document.getElementById(gradeId).style.color='red';    
+parseGrade(gradeId, 'C', 'red');   
 }
-//анализируем голд
-//sup == 9000
-//adc == 12000
-//mid == 12000
-//top == 11500
-//jun == 11000
+//анализируем статы
+//sup =? 9000  272.7; 2; 5; 13; 25
+//adc =? 12000 363.6; 7; 5; 7; 200
+//mid =? 12000 363.6; 7; 5; 8; 200
+//top =? 11500 348.5; 5; 4; 7.5; 175
+//jun =? 11000 333.3; 6; 5; 9.5; 75
+//avg game lenght = 33 min
 
+if (value=='SUP') {
+var goldDiff = gold-9000;
+var gpmDiff = gpm-272.7;
+var killsDiff = kills-2;
+var deathDiff = 5-deaths;
+var assistsDiff = assists-13;
+var csDiff = cs-25;
+
+parseDiff(goldDiff, gold_g);
+parseDiff(gpmDiff, gpm_g);
+parseDiff(killsDiff, kills_g);
+parseDiff(deathDiff, deaths_g);
+parseDiff(assistsDiff, assists_g);
+parseDiff(csDiff, cs_g);
+}
+else if (value=='ADC') {
+var goldDiff = gold-12000;
+var gpmDiff = gpm-363.6;
+var killsDiff = kills-7;
+var deathDiff = 5-deaths;
+var assistsDiff = assists-7;
+var csDiff = cs-200;
+
+parseDiff(goldDiff, gold_g);
+parseDiff(gpmDiff, gpm_g);
+parseDiff(killsDiff, kills_g);
+parseDiff(deathDiff, deaths_g);
+parseDiff(assistsDiff, assists_g);
+parseDiff(csDiff, cs_g);
+}
+else if (value=='TOP') {
+var goldDiff = gold-11500;
+var gpmDiff = gpm-348.5;
+var killsDiff = kills-5;
+var deathDiff = 4-deaths;
+var assistsDiff = assists-7.5;
+var csDiff = cs-175;
+
+parseDiff(goldDiff, gold_g);
+parseDiff(gpmDiff, gpm_g);
+parseDiff(killsDiff, kills_g);
+parseDiff(deathDiff, deaths_g);
+parseDiff(assistsDiff, assists_g);
+parseDiff(csDiff, cs_g);
+}
+else if (value=='MID') {
+var goldDiff = gold-12000;
+var gpmDiff = gpm-363.6;
+var killsDiff = kills-7;
+var deathDiff = 5-deaths;
+var assistsDiff = assists-8;
+var csDiff = cs-200;
+
+parseDiff(goldDiff, gold_g);
+parseDiff(gpmDiff, gpm_g);
+parseDiff(killsDiff, kills_g);
+parseDiff(deathDiff, deaths_g);
+parseDiff(assistsDiff, assists_g);
+parseDiff(csDiff, cs_g);
+}
+else if (value=='JUN') {
+var goldDiff = gold-11000;
+var gpmDiff = gpm-333.3;
+var killsDiff = kills-6;
+var deathDiff = 5-deaths;
+var assistsDiff = assists-9.5;
+var csDiff = cs-75;
+
+parseDiff(goldDiff, gold_g);
+parseDiff(gpmDiff, gpm_g);
+parseDiff(killsDiff, kills_g);
+parseDiff(deathDiff, deaths_g);
+parseDiff(assistsDiff, assists_g);
+parseDiff(csDiff, cs_g);
+}
+ 
 }
 function commafy( num ) {
     var str = num.toString().split('.');
-    if (str[0].length >= 5) {
+    if (str[0].length >= 4) {
         str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
     }
-    if (str[1] && str[1].length >= 5) {
+    if (str[1] && str[1].length >= 4) {
         str[1] = str[1].replace(/(\d{3})/g, '$1 ');
     }
     return str.join('.');

@@ -112,11 +112,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 }
 #main_content{
   border-radius: 2px 2px 0 0;
-  width: 500px;
-  height: 300px;
+  width: 700px;
+  height: 500px;
   display:inline-block;
   margin-left: 20px;
-  background-color: white;
+  background-image:url('http://img0.joyreactor.cc/pics/post/тп-пятничные-няшки-няшки-лох-462743.jpeg');
 }
 #wrapper{
 	margin-top: 20px;                
@@ -145,6 +145,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
     font-family: 'Lobster', cursive;
 }
 .player_stats{
+  margin-left: 10px;
   display: inline-block;
 }
 .stats_grade{
