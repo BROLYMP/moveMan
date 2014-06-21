@@ -11,7 +11,6 @@ background: -ms-linear-gradient(left,  #4c4c4c 0%,#2b2b2b 98%,#2c2c2c 100%,#1111
 background: linear-gradient(to right,  #4c4c4c 0%,#2b2b2b 98%,#2c2c2c 100%,#111111 100%,#474747 100%,#131313 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 ); /* IE6-9 */
 }
-/* Let's import the lovely google font, please keep this line at the top of your stylesheet */
 /* Menu CSS */#cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -112,8 +111,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 }
 #main_content{
   border-radius: 2px 2px 0 0;
-  width: 700px;
-  height: 500px;
+  width: 500px;
+  height: 300px;
   display:inline-block;
   margin-left: 20px;
 }
