@@ -76,7 +76,7 @@ else if(kda>=4.5&&kda<6&&value!='SUP'&&value!='JUN'){
 parseGrade(gradeId, 'A-', 'gold');
 }
 else if(kda>=3&&kda<4.5&&value!='SUP'&&value!='JUN'){
-parseGrade(gradeId, 'B', 'grey');
+parseGrade(gradeId, 'B', 'black');
 }
 else if(kda<3&&value!='SUP'&&value!='JUN'){
 parseGrade(gradeId, 'C', 'red');
@@ -91,7 +91,7 @@ else if(kda>=3&&kda<4.5){
 parseGrade(gradeId, 'A-', 'gold');
 }
 else if(kda>=2.5&&kda<3){
-parseGrade(gradeId, 'B', 'grey'); 
+parseGrade(gradeId, 'B', 'black'); 
 }
 else if(kda<2.5){
 parseGrade(gradeId, 'C', 'red');   
@@ -179,7 +179,7 @@ parseDiff(deathDiff, deaths_g);
 parseDiff(assistsDiff, assists_g);
 parseDiff(csDiff, cs_g);
 }
- 
+
 }
 function commafy( num ) {
     var str = num.toString().split('.');
