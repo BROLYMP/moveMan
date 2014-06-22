@@ -27,9 +27,9 @@ function gradeAll(){
     }
 }
 function parseDiff(x, y){
-    if (x<0) {document.getElementById(y).style.color='red';}
+    if (x<0) {document.getElementById(y).style.color='#FF0000';}
     else if (x>0) {document.getElementById(y).style.color='#19D419';}
-    else if (x==0) {document.getElementById(y).style.color='gray';}
+    else if (x==0) {document.getElementById(y).style.color='#6A6A6A';}
     x = x.toFixed(1);
     x = commafy(x);
     document.getElementById(y).innerHTML = x;
@@ -70,31 +70,31 @@ if (kda>=8&&value!='SUP'&&value!='JUN'){
 parseGrade(gradeId, 'A+', '#660066');
 }
 else if(kda>=6&&kda<8&&value!='SUP'&&value!='JUN'){
-parseGrade(gradeId, 'A', 'green');
+parseGrade(gradeId, 'A', '#19D419');
 }
 else if(kda>=4.5&&kda<6&&value!='SUP'&&value!='JUN'){
-parseGrade(gradeId, 'A-', 'gold');
+parseGrade(gradeId, 'A-', '#FFFF00');
 }
 else if(kda>=3&&kda<4.5&&value!='SUP'&&value!='JUN'){
-parseGrade(gradeId, 'B', 'black');
+parseGrade(gradeId, 'B', '#000000');
 }
 else if(kda<3&&value!='SUP'&&value!='JUN'){
-parseGrade(gradeId, 'C', 'red');
+parseGrade(gradeId, 'C', '#FF0000');
 }
 else if(kda>=6){
 parseGrade(gradeId, 'A+', '#660066');   
 }
 else if(kda>=4.5&&kda<6){
-parseGrade(gradeId, 'A', 'green');
+parseGrade(gradeId, 'A', '#19D419');
 }
 else if(kda>=3&&kda<4.5){
-parseGrade(gradeId, 'A-', 'gold');
+parseGrade(gradeId, 'A-', '#FFFF00');
 }
 else if(kda>=2.5&&kda<3){
-parseGrade(gradeId, 'B', 'black'); 
+parseGrade(gradeId, 'B', '#000000'); 
 }
 else if(kda<2.5){
-parseGrade(gradeId, 'C', 'red');   
+parseGrade(gradeId, 'C', '#FF0000');   
 }
 //анализируем статы
 //sup =? 9000  272.7; 2; 5; 13; 25
