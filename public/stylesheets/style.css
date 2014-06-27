@@ -11,7 +11,8 @@ background: -ms-linear-gradient(left,  #4c4c4c 0%,#2b2b2b 98%,#2c2c2c 100%,#1111
 background: linear-gradient(to right,  #4c4c4c 0%,#2b2b2b 98%,#2c2c2c 100%,#111111 100%,#474747 100%,#131313 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 ); /* IE6-9 */
 }
-/* Menu CSS */#cssmenu,
+/* Menu CSS */
+#cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
 #cssmenu ul li a {
@@ -50,7 +51,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   margin: 4px 2px 0;
   border-radius: 2px 2px 0 0;
   text-decoration: none;
-  font-size: 23px;
+  font-size: 1.5em;
   color: #000000;
   text-shadow: 0 1px 1px #666666;
   font-weight: 400;
@@ -70,7 +71,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
   opacity: 1;
 }
-/* End of Menu */
+/*End of Menu */
 #left_menu {
 	float: left;
 	width: 49%;
@@ -78,14 +79,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 
 .accordionButton {	
   border-radius: 2px 2px 0 0;
-  height: auto;
-  font-size: 2vw;
+  height: 7%;
+  font-size: 3vw;
 	color:#000000;
   text-shadow: 0 1px 1px #666666;
   opacity: 1;
   font-family: 'Oswald', sans-serif;
 	background: url(/images/nav-bg.png) repeat-x;
-	border-bottom: 1px solid #000000;
+  background-size: 7vw;
 	cursor: pointer;
   text-align: center;
 	}
@@ -96,6 +97,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 	display: none;
   font-family: 'Anton', sans-serif;
   vertical-align: top;
+  height: 35vw;
 background: #4c4c4c; /* Old browsers */
 background: -moz-linear-gradient(-45deg,  #4c4c4c 0%, #2b2b2b 98%, #2c2c2c 100%, #111111 100%, #474747 100%, #131313 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#4c4c4c), color-stop(98%,#2b2b2b), color-stop(100%,#2c2c2c), color-stop(100%,#111111), color-stop(100%,#474747), color-stop(100%,#131313)); /* Chrome,Safari4+ */
@@ -124,7 +126,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 	display:inline-block;
 }
 .position_img img{
-  width: 100%;
+  width: 10vw;
   border: solid #000000;
   border-radius: 2px 2px 0 0;
 }
@@ -143,13 +145,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
   font-family: 'Lobster', cursive;
 }
 .player_stats{
-  width: auto;
   font-size: 2vw;
   margin-left: 10px;
   display: inline-block;
 }
 .stats_grade{
-  width: auto;
   margin-left: 40px;
   display: inline-block;
   font-size: 2vw;

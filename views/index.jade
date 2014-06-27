@@ -5,14 +5,11 @@ block content
     #cssmenu
       ul
         li.active
-          a(href='#')
-            span Team
+          a(href='#') Team
         li
-          a(href='#')
-            span Update
+          a(href='#') Update
         li.last
-          a(href='#')
-            span About
+          a(href='#') About
     #wrapper
       #left_menu
         each player in playerlist
@@ -62,16 +59,21 @@ block content
               br
               span(id='#{role}_cs_g')
       #main_content
-        h1 Team_INF0(TODO)
-        table
-          thead
-            th Names
-            th Kills
-          tbody
-            - var name= ' '
-            - var kills= 0
-              each player in playerlist
-                - name = name + ' ' + player.name
-                - kills = kills + player.kills
-              th= name
-              th= kills 
+        h1 Alliance
+          br
+          - var kills= 0
+          - var deaths= 0
+          - var assists= 0
+          - var avgTime= 0
+            each player in playerlist
+              - kills = kills + player.kills
+              - deaths = deaths + player.deaths
+              - assists = assists + player.assists
+              - avgTime = player.mins/player.games
+            span= kills
+            br
+            span= deaths
+            br
+            span= assists
+            br
+            span= avgTime
